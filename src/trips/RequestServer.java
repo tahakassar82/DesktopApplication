@@ -118,13 +118,7 @@ public class RequestServer {
                                 JSONObject nameObject = new JSONObject(response.toString());
                                 JSONObject jSONObject = new JSONObject();
                                 jSONObject.put("code", responseCode);
-                                jSONObject.put("ph_id", nameObject.getString("_id"));
-                                jSONObject.put("name", nameObject.getString("name"));
-                                jSONObject.put("pharmacist_name", nameObject.getString("pharmacist_name"));
-                                jSONObject.put("location", nameObject.getString("location"));
-                                jSONObject.put("mobile", nameObject.getString("mobile"));
-                                jSONObject.put("phone", nameObject.getString("phone"));
-                                jSONObject.put("openDay", nameObject.getJSONArray("openDay"));
+                                jSONObject.put("token", nameObject.getString("token"));
                                 return jSONObject;
                             } catch (JSONException e) {
                                 JSONObject nameObject = new JSONObject(response.toString());
@@ -168,8 +162,10 @@ public class RequestServer {
                                 }
                             }
                             try {
+                                JSONObject nameObject = new JSONObject(response.toString());
                                 JSONObject jSONObject = new JSONObject();
                                 jSONObject.put("code", responseCode);
+                                jSONObject.put("token", nameObject.getString("token"));
                                 return jSONObject;
                             }
                             catch(JSONException e){
